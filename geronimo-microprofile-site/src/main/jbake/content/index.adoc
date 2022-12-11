@@ -1,0 +1,50 @@
+= Apache Geronimo And Microprofile
+:jbake-date: 2018-07-24
+:icons: font
+
+Apache Geronimo hosts several Microprofile Implementation.
+This site let's you get started with all of them.
+
+link:downloads.html[icon:download[] Downloads Area]
+
+Here are the available implementations:
+
+link:config.html[icon:database[] Config] |
+link:fault-tolerance.html[icon:exclamation-triangle[] Fault Tolerance (Safeguard)] |
+link:jwt-auth.html[icon:shield[] JWT Auth] |
+link:opentracing.html[icon:truck[] OpenTracing] |
+link:health.html[icon:medkit[] Health] |
+link:metrics.html[icon:balance-scale[] Metrics] |
+link:openapi.html[icon:briefcase[] OpenAPI]
+
+Note we also provide some pom aggregator to import all the stack at once:
+
+[source,xml]
+----
+<dependency>
+  <groupId>org.apache.geronimo</groupId>
+  <artifactId>geronimo-microprofile-aggregator</artifactId>
+  <version>${geronimo-microprofile.version}</version>
+  <type>pom</type>
+</dependency>
+----
+
+If you want to investigate your Microprofile setup you can also play with our reporter link:reporter.html[UI/webapp].
+
+We also provide μ~ (utilda) which is a pom with link:http://openwebbeans.apache.org/meecrowave/[Apache Meecrowave] and the Aggregator pom which makes
+you a one dependency Microprofile 2.0 server, ready to use:
+
+[source,xml]
+----
+<dependency>
+  <groupId>org.apache.geronimo</groupId>
+  <artifactId>utilda</artifactId>
+  <version>${geronimo-microprofile.version}</version>
+  <type>pom</type>
+</dependency>
+----
+
+WARNING: the 1.0.0 release binary has some versioning issues, ensure to evaluate the snapshot until we release next version please.
+
+Finally we provide a set of Microprofile extensions to make it faster to be production and cloud ready
+like a secure Microprofile config converter to credentials and a Docker integration. Read more on the dedicated link:extensions.html[page].
